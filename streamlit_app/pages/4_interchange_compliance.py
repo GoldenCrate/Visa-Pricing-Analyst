@@ -81,6 +81,10 @@ if n_exceptions:
             title="Assessment $ at risk over time", height=300
         )
         st.altair_chart(style(trend), use_container_width=True)
+        st.caption(
+            "The red point marks the month of greatest assessment exposure — "
+            "start the investigation there to find what drove the spike."
+        )
 
     with right:
         by_cat = (
@@ -103,6 +107,10 @@ if n_exceptions:
             .properties(title="Where exceptions concentrate", height=300)
         )
         st.altair_chart(style(bars), use_container_width=True)
+        st.caption(
+            f"**{top_cat}** concentrates the most assessment at risk — "
+            "prioritise compliance review and root-cause analysis there."
+        )
 
     st.subheader("Flagged for management review")
     review = exceptions.sort_values(

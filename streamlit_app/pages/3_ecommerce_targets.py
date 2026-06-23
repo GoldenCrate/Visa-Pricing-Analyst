@@ -81,6 +81,10 @@ with col1:
         .properties(height=320)
     )
     st.altair_chart(style(bar), use_container_width=True)
+    st.caption(
+        "High-priority targets (red) combine large volume, strong growth, and "
+        "acceptance headroom — begin deal outreach at the top of this list."
+    )
 
 with col2:
     st.subheader("Volume vs Acceptance Rate")
@@ -107,6 +111,10 @@ with col2:
         .properties(height=320)
     )
     st.altair_chart(style(scatter), use_container_width=True)
+    st.caption(
+        "Top-right = high volume; further left = lower acceptance (more upside to "
+        "win). The largest red dots are the highest-scoring, high-priority targets."
+    )
 
 # ── Ranked table ──────────────────────────────────────────────────────────────
 st.subheader("Ranked Merchant Table")

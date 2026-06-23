@@ -98,6 +98,10 @@ with col1:
         .properties(height=300)
     )
     st.altair_chart(style(chart_vol), use_container_width=True)
+    st.caption(
+        "What to look for: the overall trend — steady growth signals expanding "
+        "network volume; flat or dipping stretches flag seasonal or regional softness."
+    )
 
 with col2:
     st.subheader("Avg Interchange Rate by Merchant Category")
@@ -126,6 +130,10 @@ with col2:
         .properties(height=300)
     )
     st.altair_chart(style(chart_ir), use_container_width=True)
+    st.caption(
+        f"**{top_category}** carries the highest interchange rate — the category "
+        "with the most revenue headroom per transaction to structure deals around."
+    )
 
 # ── Row 2: Acceptance rate by region │ Revenue by card type ───────────────────
 col3, col4 = st.columns(2)
@@ -157,6 +165,10 @@ with col3:
         .properties(height=300)
     )
     st.altair_chart(style(chart_acc), use_container_width=True)
+    st.caption(
+        f"**{lowest_region}** has the lowest acceptance rate — the biggest "
+        "network-improvement opportunity and the most revenue left on the table."
+    )
 
 with col4:
     st.subheader("Revenue Share by Card Type")
@@ -166,25 +178,33 @@ with col4:
         .sort_values("revenue_usd", ascending=False)
     )
     rev_by_card["revenue_m"] = rev_by_card["revenue_usd"] / 1_000_000
+    rev_by_card["share_pct"] = (
+        rev_by_card["revenue_usd"] / rev_by_card["revenue_usd"].sum() * 100
+    )
     top_card = str(rev_by_card.iloc[0]["card_type"])  # largest revenue share
     chart_rev = (
         alt.Chart(rev_by_card)
         .mark_bar()
         .encode(
-            x=alt.X("card_type:N", title="Card Type"),
-            y=alt.Y("revenue_m:Q", title="Revenue (USD M)"),
+            x=alt.X("share_pct:Q", title="Share of Revenue (%)"),
+            y=alt.Y("card_type:N", sort="-x", title=""),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="card_type", equal=top_card),
                 alt.value(ACCENT), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("card_type:N", title="Card Type"),
+                alt.Tooltip("share_pct:Q", title="Share (%)", format=".1f"),
                 alt.Tooltip("revenue_m:Q", title="Revenue ($M)", format=".1f"),
             ],
         )
         .properties(height=300)
     )
     st.altair_chart(style(chart_rev), use_container_width=True)
+    st.caption(
+        f"**{top_card}** drives the largest share of revenue — the card type "
+        "where a pricing change moves the needle most."
+    )
 
 # ── Row 3: Raw data expander ───────────────────────────────────────────────────
 with st.expander("View raw data"):
