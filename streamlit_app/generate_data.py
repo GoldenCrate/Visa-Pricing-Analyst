@@ -9,6 +9,11 @@ from datetime import date, timedelta
 
 random.seed(42)
 
+# Dedicated RNG for compliance-anomaly injection. Kept separate from the main
+# `random` stream so non-anomalous rows are identical to the prior dataset.
+anomaly_rng = random.Random(1234)
+anomaly_count = 0
+
 REGIONS = {
     "North America":   {"vol_base": 12_000_000, "accept_base": 0.96},
     "Europe":          {"vol_base":  9_000_000, "accept_base": 0.94},
@@ -68,6 +73,18 @@ for month in month_range(start_date, end_date):
                     cparams["interchange_base"] * seasonal * random.uniform(0.97, 1.03), 4
                 )
 
+                # Compliance anomaly injection: ~2.5% of rows are materially
+                # mis-assessed (20-60 bps off the published schedule, either
+                # direction) to simulate interchange processing errors for the
+                # Compliance Monitor page. Uses a separate RNG so other rows are
+                # unchanged. revenue (computed below) reflects the assessed rate.
+                if anomaly_rng.random() < 0.025:
+                    delta = anomaly_rng.uniform(0.0020, 0.0060) * anomaly_rng.choice([-1, 1])
+                    interchange_rate = round(
+                        max(0.0010, cparams["interchange_base"] + delta), 4
+                    )
+                    anomaly_count += 1
+
                 # revenue = vol * avg_txn_value * interchange_rate
                 avg_txn = kparams["avg_txn_usd"] * random.uniform(0.95, 1.05)
                 revenue = round(vol * avg_txn * interchange_rate, 2)
@@ -96,3 +113,4 @@ with open(out_path, "w", newline="") as f:
     writer.writerows(rows)
 
 print(f"Written {len(rows):,} rows to {out_path}")
+print(f"Injected {anomaly_count} interchange anomalies")

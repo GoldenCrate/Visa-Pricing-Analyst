@@ -1,7 +1,7 @@
 month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,interchange_rate,revenue_usd,acceptance_rate
 2024-01-01,North America,Retail,Credit,6379203,83.09,0.0175,9275588.33,0.9547
 2024-01-01,North America,Retail,Debit,4732529,43.65,0.0182,3759417.9,0.9521
-2024-01-01,North America,Retail,Prepaid,1185008,27.21,0.0175,564316.52,0.9601
+2024-01-01,North America,Retail,Prepaid,1185008,27.21,0.0124,399858.57,0.9601
 2024-01-01,North America,Travel,Credit,5767293,86.27,0.0216,10747458.83,0.9609
 2024-01-01,North America,Travel,Debit,4356033,43.3,0.0221,4168380.91,0.9505
 2024-01-01,North America,Travel,Prepaid,1258717,27.55,0.0223,773387.5,0.9534
@@ -14,7 +14,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-01-01,North America,E-commerce,Credit,6375467,83.9,0.0238,12730134.74,0.9544
 2024-01-01,North America,E-commerce,Debit,4389987,42.62,0.0246,4602879.49,0.9621
 2024-01-01,North America,E-commerce,Prepaid,1136858,27.06,0.0243,747481.75,0.9577
-2024-01-01,North America,Fuel,Credit,6728740,85.48,0.0146,8397921.46,0.9635
+2024-01-01,North America,Fuel,Credit,6728740,85.48,0.0106,6097121.06,0.9635
 2024-01-01,North America,Fuel,Debit,4810144,40.86,0.0147,2889316.07,0.951
 2024-01-01,North America,Fuel,Prepaid,1164566,27.19,0.0143,452815.58,0.9685
 2024-01-01,Europe,Retail,Credit,4961824,86.32,0.0178,7623931.24,0.938
@@ -30,7 +30,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-01-01,Europe,Healthcare,Debit,3420320,43.73,0.0157,2348421.4,0.947
 2024-01-01,Europe,Healthcare,Prepaid,870976,28.31,0.0161,396914.54,0.9335
 2024-01-01,Europe,E-commerce,Credit,4876568,87.37,0.0241,10267987.64,0.9406
-2024-01-01,Europe,E-commerce,Debit,3146712,39.98,0.0237,2981725.85,0.9481
+2024-01-01,Europe,E-commerce,Debit,3146712,39.98,0.02,2516224.34,0.9481
 2024-01-01,Europe,E-commerce,Prepaid,954535,27.46,0.0245,642206.82,0.9317
 2024-01-01,Europe,Fuel,Credit,4963053,81.48,0.0149,6025260.54,0.9397
 2024-01-01,Europe,Fuel,Debit,3184273,43.12,0.0147,2018232.41,0.933
@@ -162,7 +162,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-02-01,Latin America,Fuel,Debit,1641889,42.83,0.0145,1019650.37,0.8635
 2024-02-01,Latin America,Fuel,Prepaid,425275,29.04,0.0145,179097.09,0.8713
 2024-02-01,Middle East & Africa,Retail,Credit,1298809,82.32,0.0179,1913763.8,0.8226
-2024-02-01,Middle East & Africa,Retail,Debit,1021109,43.35,0.018,796824.39,0.8284
+2024-02-01,Middle East & Africa,Retail,Debit,1021109,43.35,0.0219,969469.68,0.8284
 2024-02-01,Middle East & Africa,Retail,Prepaid,233895,26.75,0.0181,113246.56,0.8242
 2024-02-01,Middle East & Africa,Travel,Credit,1318322,89.2,0.0217,2551748.28,0.8237
 2024-02-01,Middle East & Africa,Travel,Debit,994156,43.22,0.0221,949604.45,0.8254
@@ -298,7 +298,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-04-01,Europe,Dining,Prepaid,844100,29.18,0.0189,465510.95,0.9468
 2024-04-01,Europe,Healthcare,Credit,4793569,86.78,0.0161,6697430.48,0.9385
 2024-04-01,Europe,Healthcare,Debit,3247935,41.26,0.0155,2077354.57,0.9457
-2024-04-01,Europe,Healthcare,Prepaid,928014,29.18,0.0163,441324.75,0.9323
+2024-04-01,Europe,Healthcare,Prepaid,928014,29.18,0.0193,522550.17,0.9323
 2024-04-01,Europe,E-commerce,Credit,4997205,85.76,0.0236,10113481.3,0.9405
 2024-04-01,Europe,E-commerce,Debit,3403319,41.33,0.0237,3333296.23,0.9369
 2024-04-01,Europe,E-commerce,Prepaid,862437,26.92,0.024,557188.28,0.9402
@@ -378,7 +378,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-05-01,North America,Fuel,Debit,4841489,40.18,0.0141,2743049.97,0.9653
 2024-05-01,North America,Fuel,Prepaid,1193124,28.19,0.0144,484302.52,0.962
 2024-05-01,Europe,Retail,Credit,4891106,83.91,0.0185,7592826.29,0.9449
-2024-05-01,Europe,Retail,Debit,3515817,41.57,0.018,2630855.53,0.9428
+2024-05-01,Europe,Retail,Debit,3515817,41.57,0.0224,3273953.55,0.9428
 2024-05-01,Europe,Retail,Prepaid,877767,28.66,0.0176,442758.01,0.94
 2024-05-01,Europe,Travel,Credit,4668902,82.98,0.0221,8561597.87,0.9355
 2024-05-01,Europe,Travel,Debit,3444850,41.1,0.0227,3213896.58,0.9478
@@ -466,7 +466,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-06-01,North America,E-commerce,Prepaid,1274386,29.0,0.0235,868410.51,0.9676
 2024-06-01,North America,Fuel,Credit,6697795,81.49,0.0145,7913883.03,0.9632
 2024-06-01,North America,Fuel,Debit,4416616,41.26,0.0142,2587605.23,0.9552
-2024-06-01,North America,Fuel,Prepaid,1177152,28.71,0.0143,483292.02,0.9687
+2024-06-01,North America,Fuel,Prepaid,1177152,28.71,0.018,608339.6,0.9687
 2024-06-01,Europe,Retail,Credit,4622330,80.85,0.0182,6801384.69,0.9429
 2024-06-01,Europe,Retail,Debit,3595992,40.4,0.0175,2542148.88,0.9364
 2024-06-01,Europe,Retail,Prepaid,904107,29.11,0.018,473674.28,0.9438
@@ -480,7 +480,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-06-01,Europe,Healthcare,Debit,3292967,42.09,0.0158,2189657.96,0.9328
 2024-06-01,Europe,Healthcare,Prepaid,874729,26.85,0.0161,378197.52,0.9402
 2024-06-01,Europe,E-commerce,Credit,5009371,85.11,0.0239,10190018.9,0.9392
-2024-06-01,Europe,E-commerce,Debit,3241553,43.29,0.0239,3353737.19,0.9442
+2024-06-01,Europe,E-commerce,Debit,3241553,43.29,0.0208,2918733.63,0.9442
 2024-06-01,Europe,E-commerce,Prepaid,902716,28.69,0.0245,634484.94,0.9415
 2024-06-01,Europe,Fuel,Credit,4426303,81.29,0.0144,5181448.94,0.9493
 2024-06-01,Europe,Fuel,Debit,3730959,43.82,0.0141,2305315.5,0.9312
@@ -531,7 +531,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-06-01,Middle East & Africa,Dining,Debit,994853,41.93,0.0196,817587.47,0.8298
 2024-06-01,Middle East & Africa,Dining,Prepaid,234869,26.63,0.0196,122604.06,0.8305
 2024-06-01,Middle East & Africa,Healthcare,Credit,1278208,80.9,0.0165,1706125.51,0.8352
-2024-06-01,Middle East & Africa,Healthcare,Debit,995982,43.72,0.0163,709789.64,0.8235
+2024-06-01,Middle East & Africa,Healthcare,Debit,995982,43.72,0.0186,809944.01,0.8235
 2024-06-01,Middle East & Africa,Healthcare,Prepaid,238529,27.14,0.0157,101627.03,0.8304
 2024-06-01,Middle East & Africa,E-commerce,Credit,1392875,84.12,0.0237,2777016.37,0.8279
 2024-06-01,Middle East & Africa,E-commerce,Debit,954430,44.06,0.0241,1013434.19,0.8254
@@ -620,7 +620,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-07-01,Middle East & Africa,Dining,Credit,1376088,82.16,0.0197,2227292.86,0.824
 2024-07-01,Middle East & Africa,Dining,Debit,927135,40.15,0.0192,714697.42,0.8275
 2024-07-01,Middle East & Africa,Dining,Prepaid,247033,27.51,0.0195,132501.46,0.8334
-2024-07-01,Middle East & Africa,Healthcare,Credit,1286329,88.04,0.0158,1789388.68,0.8381
+2024-07-01,Middle East & Africa,Healthcare,Credit,1286329,88.04,0.0103,1166500.22,0.8381
 2024-07-01,Middle East & Africa,Healthcare,Debit,1000707,43.94,0.0156,686005.48,0.8347
 2024-07-01,Middle East & Africa,Healthcare,Prepaid,273152,29.03,0.0165,130828.23,0.8238
 2024-07-01,Middle East & Africa,E-commerce,Credit,1409171,86.8,0.0236,2886554.06,0.8355
@@ -652,7 +652,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-08-01,Europe,Retail,Prepaid,908033,27.48,0.0185,461636.07,0.9332
 2024-08-01,Europe,Travel,Credit,4639357,85.45,0.0215,8523696.85,0.9419
 2024-08-01,Europe,Travel,Debit,3576283,42.8,0.0224,3428654.0,0.9465
-2024-08-01,Europe,Travel,Prepaid,948649,28.05,0.0217,577422.19,0.9402
+2024-08-01,Europe,Travel,Prepaid,948649,28.05,0.0241,641284.55,0.9402
 2024-08-01,Europe,Dining,Credit,5001821,81.21,0.0193,7839989.61,0.9475
 2024-08-01,Europe,Dining,Debit,3771522,40.37,0.0195,2969257.82,0.94
 2024-08-01,Europe,Dining,Prepaid,939104,29.34,0.0195,537244.73,0.9492
@@ -742,7 +742,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-09-01,Europe,Retail,Prepaid,873420,29.26,0.0182,465070.16,0.9484
 2024-09-01,Europe,Travel,Credit,4745993,88.95,0.0227,9583380.73,0.9312
 2024-09-01,Europe,Travel,Debit,3587259,43.96,0.0226,3564222.01,0.9348
-2024-09-01,Europe,Travel,Prepaid,938541,26.99,0.0226,572566.24,0.9446
+2024-09-01,Europe,Travel,Prepaid,938541,26.99,0.0169,428157.94,0.9446
 2024-09-01,Europe,Dining,Credit,4627293,82.18,0.0201,7643170.85,0.9472
 2024-09-01,Europe,Dining,Debit,3297189,42.58,0.0197,2766042.7,0.9473
 2024-09-01,Europe,Dining,Prepaid,920868,27.3,0.0192,482659.44,0.9319
@@ -764,7 +764,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-09-01,Asia Pacific,Dining,Credit,4421570,84.91,0.0194,7283219.23,0.9129
 2024-09-01,Asia Pacific,Dining,Debit,3115297,40.68,0.0196,2483699.89,0.917
 2024-09-01,Asia Pacific,Dining,Prepaid,858870,27.34,0.0194,455495.04,0.9094
-2024-09-01,Asia Pacific,Healthcare,Credit,4361643,81.27,0.0158,5600908.63,0.9146
+2024-09-01,Asia Pacific,Healthcare,Credit,4361643,81.27,0.0212,7515143.23,0.9146
 2024-09-01,Asia Pacific,Healthcare,Debit,3422677,41.34,0.0156,2207507.6,0.9108
 2024-09-01,Asia Pacific,Healthcare,Prepaid,943264,28.15,0.0161,427502.69,0.9162
 2024-09-01,Asia Pacific,E-commerce,Credit,4793821,85.3,0.0239,9773233.59,0.9167
@@ -790,7 +790,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-09-01,Latin America,E-commerce,Prepaid,434319,27.77,0.0237,285815.36,0.8725
 2024-09-01,Latin America,Fuel,Credit,2039381,87.75,0.0142,2541279.01,0.8742
 2024-09-01,Latin America,Fuel,Debit,1633768,43.35,0.0148,1048151.12,0.8703
-2024-09-01,Latin America,Fuel,Prepaid,390275,28.02,0.0143,156372.3,0.8637
+2024-09-01,Latin America,Fuel,Prepaid,390275,28.02,0.0092,100603.16,0.8637
 2024-09-01,Middle East & Africa,Retail,Credit,1417007,81.0,0.0184,2111804.49,0.8249
 2024-09-01,Middle East & Africa,Retail,Debit,1032624,40.95,0.0184,778020.85,0.8293
 2024-09-01,Middle East & Africa,Retail,Prepaid,275256,27.37,0.0182,137100.03,0.8354
@@ -814,7 +814,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-10-01,North America,Retail,Prepaid,1275131,28.62,0.0185,675134.01,0.963
 2024-10-01,North America,Travel,Credit,6979193,84.31,0.022,12944810.25,0.9579
 2024-10-01,North America,Travel,Debit,4372923,42.3,0.0226,4180681.73,0.954
-2024-10-01,North America,Travel,Prepaid,1288263,28.1,0.022,796318.55,0.9655
+2024-10-01,North America,Travel,Prepaid,1288263,28.1,0.0164,593619.28,0.9655
 2024-10-01,North America,Dining,Credit,6885127,85.06,0.02,11713277.73,0.9666
 2024-10-01,North America,Dining,Debit,4981637,40.66,0.0202,4091655.43,0.9523
 2024-10-01,North America,Dining,Prepaid,1169193,28.86,0.0195,658063.41,0.965
@@ -965,7 +965,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-11-01,Latin America,Healthcare,Credit,2293990,83.8,0.0162,3114203.19,0.8666
 2024-11-01,Latin America,Healthcare,Debit,1593869,42.45,0.0159,1075735.01,0.8759
 2024-11-01,Latin America,Healthcare,Prepaid,439875,28.11,0.0159,196588.62,0.8659
-2024-11-01,Latin America,E-commerce,Credit,2296915,81.39,0.0237,4430667.08,0.8616
+2024-11-01,Latin America,E-commerce,Credit,2296915,81.39,0.0208,3888517.95,0.8616
 2024-11-01,Latin America,E-commerce,Debit,1582615,42.34,0.0237,1588235.47,0.8683
 2024-11-01,Latin America,E-commerce,Prepaid,421992,28.14,0.025,296918.46,0.8708
 2024-11-01,Latin America,Fuel,Credit,2335815,87.34,0.0147,2998919.93,0.8677
@@ -1039,7 +1039,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2024-12-01,Asia Pacific,Healthcare,Prepaid,849054,29.28,0.0161,400185.89,0.9103
 2024-12-01,Asia Pacific,E-commerce,Credit,4252500,82.86,0.0248,8738601.32,0.9026
 2024-12-01,Asia Pacific,E-commerce,Debit,3465836,40.22,0.0248,3456960.56,0.9179
-2024-12-01,Asia Pacific,E-commerce,Prepaid,884071,29.1,0.0241,620094.88,0.9058
+2024-12-01,Asia Pacific,E-commerce,Prepaid,884071,29.1,0.0186,478579.45,0.9058
 2024-12-01,Asia Pacific,Fuel,Credit,4944594,88.48,0.0149,6519038.33,0.91
 2024-12-01,Asia Pacific,Fuel,Debit,3210078,43.57,0.0149,2083745.82,0.9047
 2024-12-01,Asia Pacific,Fuel,Prepaid,845197,28.33,0.0145,347219.63,0.9037
@@ -1124,7 +1124,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-01-01,Asia Pacific,Dining,Credit,4465642,88.52,0.0199,7866711.91,0.911
 2025-01-01,Asia Pacific,Dining,Debit,3151540,41.14,0.0191,2476508.06,0.9057
 2025-01-01,Asia Pacific,Dining,Prepaid,871859,28.39,0.0189,467756.14,0.9078
-2025-01-01,Asia Pacific,Healthcare,Credit,4399095,88.03,0.0155,6002619.05,0.915
+2025-01-01,Asia Pacific,Healthcare,Credit,4399095,88.03,0.0101,3911384.03,0.915
 2025-01-01,Asia Pacific,Healthcare,Debit,3243565,42.66,0.0162,2241854.86,0.9107
 2025-01-01,Asia Pacific,Healthcare,Prepaid,874764,27.99,0.016,391798.22,0.9109
 2025-01-01,Asia Pacific,E-commerce,Credit,4715938,86.2,0.0237,9634119.46,0.9029
@@ -1142,7 +1142,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-01-01,Latin America,Dining,Credit,2266752,81.65,0.0194,3590420.22,0.8724
 2025-01-01,Latin America,Dining,Debit,1556758,42.69,0.0195,1296052.95,0.8767
 2025-01-01,Latin America,Dining,Prepaid,396852,27.72,0.0191,210147.13,0.8672
-2025-01-01,Latin America,Healthcare,Credit,2060620,84.52,0.0165,2873549.96,0.8674
+2025-01-01,Latin America,Healthcare,Credit,2060620,84.52,0.0199,3465675.4,0.8674
 2025-01-01,Latin America,Healthcare,Debit,1545847,41.26,0.0165,1052487.66,0.8678
 2025-01-01,Latin America,Healthcare,Prepaid,436919,28.63,0.0159,198909.83,0.8719
 2025-01-01,Latin America,E-commerce,Credit,2201863,87.26,0.0236,4534298.83,0.8774
@@ -1268,7 +1268,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-03-01,North America,Dining,Credit,6664276,85.81,0.0194,11094001.19,0.967
 2025-03-01,North America,Dining,Debit,5009161,41.22,0.0197,4067697.61,0.951
 2025-03-01,North America,Dining,Prepaid,1249736,27.27,0.0195,664453.72,0.9591
-2025-03-01,North America,Healthcare,Credit,7064645,83.32,0.0157,9241399.02,0.9526
+2025-03-01,North America,Healthcare,Credit,7064645,83.32,0.0199,11713620.41,0.9526
 2025-03-01,North America,Healthcare,Debit,5034897,43.74,0.0163,3589369.03,0.9589
 2025-03-01,North America,Healthcare,Prepaid,1170879,28.0,0.016,524556.64,0.9541
 2025-03-01,North America,E-commerce,Credit,7036084,85.2,0.0243,14567370.09,0.9653
@@ -1315,13 +1315,13 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-03-01,Asia Pacific,Fuel,Prepaid,833421,28.9,0.0147,354039.08,0.9074
 2025-03-01,Latin America,Retail,Credit,2323435,82.75,0.0184,3537642.89,0.8735
 2025-03-01,Latin America,Retail,Debit,1577966,41.51,0.0178,1165860.22,0.8679
-2025-03-01,Latin America,Retail,Prepaid,425449,27.93,0.0182,216264.0,0.8646
+2025-03-01,Latin America,Retail,Prepaid,425449,27.93,0.0236,280430.24,0.8646
 2025-03-01,Latin America,Travel,Credit,2155922,87.89,0.0226,4282322.6,0.864
 2025-03-01,Latin America,Travel,Debit,1732876,40.46,0.0222,1556642.56,0.8625
 2025-03-01,Latin America,Travel,Prepaid,389669,27.96,0.0223,242985.75,0.8689
 2025-03-01,Latin America,Dining,Credit,2368760,86.21,0.019,3879963.1,0.8685
 2025-03-01,Latin America,Dining,Debit,1593827,42.44,0.0198,1339267.9,0.8687
-2025-03-01,Latin America,Dining,Prepaid,400759,28.15,0.0195,219953.34,0.8691
+2025-03-01,Latin America,Dining,Prepaid,400759,28.15,0.0142,160171.15,0.8691
 2025-03-01,Latin America,Healthcare,Credit,2145629,85.89,0.0157,2893284.8,0.8714
 2025-03-01,Latin America,Healthcare,Debit,1694185,42.01,0.0157,1117338.72,0.8684
 2025-03-01,Latin America,Healthcare,Prepaid,425520,29.34,0.0159,198501.23,0.8712
@@ -1390,7 +1390,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-04-01,Asia Pacific,Retail,Prepaid,912438,26.7,0.0185,450753.74,0.9035
 2025-04-01,Asia Pacific,Travel,Credit,4800517,88.55,0.022,9352221.13,0.9017
 2025-04-01,Asia Pacific,Travel,Debit,3534072,40.62,0.0215,3086672.92,0.9018
-2025-04-01,Asia Pacific,Travel,Prepaid,873225,27.88,0.0224,545287.01,0.904
+2025-04-01,Asia Pacific,Travel,Prepaid,873225,27.88,0.0251,611013.57,0.904
 2025-04-01,Asia Pacific,Dining,Credit,4753448,81.65,0.0199,7723929.57,0.9099
 2025-04-01,Asia Pacific,Dining,Debit,3587690,43.28,0.0192,2981195.07,0.9087
 2025-04-01,Asia Pacific,Dining,Prepaid,945908,28.5,0.0201,541854.16,0.9068
@@ -1407,7 +1407,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-04-01,Latin America,Retail,Debit,1727283,43.19,0.0181,1350185.96,0.8674
 2025-04-01,Latin America,Retail,Prepaid,390390,26.93,0.0177,186076.93,0.8705
 2025-04-01,Latin America,Travel,Credit,2062170,87.22,0.0218,3920983.36,0.8707
-2025-04-01,Latin America,Travel,Debit,1538831,42.67,0.0224,1470798.51,0.8661
+2025-04-01,Latin America,Travel,Debit,1538831,42.67,0.0245,1608685.87,0.8661
 2025-04-01,Latin America,Travel,Prepaid,403221,28.52,0.0224,257585.03,0.8782
 2025-04-01,Latin America,Dining,Credit,2195773,86.45,0.0191,3625490.55,0.8621
 2025-04-01,Latin America,Dining,Debit,1648543,41.73,0.0192,1320700.42,0.8671
@@ -1442,8 +1442,8 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-05-01,North America,Retail,Credit,6194213,87.0,0.0184,9916148.27,0.9515
 2025-05-01,North America,Retail,Debit,5197541,43.63,0.0182,4127143.98,0.9525
 2025-05-01,North America,Retail,Prepaid,1249341,27.62,0.0181,624654.44,0.9538
-2025-05-01,North America,Travel,Credit,6701812,86.78,0.0214,12445790.47,0.9543
-2025-05-01,North America,Travel,Debit,5225432,40.38,0.0217,4578417.16,0.9596
+2025-05-01,North America,Travel,Credit,6701812,86.78,0.0261,15179211.75,0.9543
+2025-05-01,North America,Travel,Debit,5225432,40.38,0.0242,5105884.58,0.9596
 2025-05-01,North America,Travel,Prepaid,1366512,29.29,0.0221,884419.33,0.9544
 2025-05-01,North America,Dining,Credit,6899640,83.75,0.0192,11094362.69,0.9555
 2025-05-01,North America,Dining,Debit,4991749,40.17,0.0192,3849587.36,0.957
@@ -1456,7 +1456,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-05-01,North America,E-commerce,Prepaid,1281026,27.42,0.0242,850069.84,0.969
 2025-05-01,North America,Fuel,Credit,6683376,83.7,0.0142,7943170.45,0.9589
 2025-05-01,North America,Fuel,Debit,4964157,40.16,0.0143,2851167.28,0.9671
-2025-05-01,North America,Fuel,Prepaid,1222117,28.41,0.0149,517243.56,0.9583
+2025-05-01,North America,Fuel,Prepaid,1222117,28.41,0.0089,308957.57,0.9583
 2025-05-01,Europe,Retail,Credit,4854269,83.52,0.0182,7379118.0,0.9418
 2025-05-01,Europe,Retail,Debit,3753498,41.77,0.0184,2884823.73,0.9363
 2025-05-01,Europe,Retail,Prepaid,901209,27.08,0.0183,446620.99,0.9355
@@ -1503,7 +1503,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-05-01,Latin America,Dining,Debit,1624942,42.06,0.02,1366843.99,0.8746
 2025-05-01,Latin America,Dining,Prepaid,404030,28.71,0.019,220374.06,0.8708
 2025-05-01,Latin America,Healthcare,Credit,2345001,86.57,0.0163,3309094.69,0.8665
-2025-05-01,Latin America,Healthcare,Debit,1665266,40.3,0.0162,1087253.01,0.8714
+2025-05-01,Latin America,Healthcare,Debit,1665266,40.3,0.0216,1449670.68,0.8714
 2025-05-01,Latin America,Healthcare,Prepaid,447616,28.05,0.0155,194618.34,0.8678
 2025-05-01,Latin America,E-commerce,Credit,2207772,88.49,0.0238,4649793.93,0.8631
 2025-05-01,Latin America,E-commerce,Debit,1527890,40.69,0.0236,1467257.02,0.8769
@@ -1533,7 +1533,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-06-01,North America,Retail,Debit,4570646,42.42,0.0178,3451318.19,0.9564
 2025-06-01,North America,Retail,Prepaid,1379243,28.15,0.0179,695003.67,0.956
 2025-06-01,North America,Travel,Credit,7043243,81.34,0.0216,12374838.79,0.9665
-2025-06-01,North America,Travel,Debit,4851127,40.65,0.0222,4378130.86,0.9696
+2025-06-01,North America,Travel,Debit,4851127,40.65,0.0182,3589278.45,0.9696
 2025-06-01,North America,Travel,Prepaid,1279887,27.83,0.0215,765719.42,0.963
 2025-06-01,North America,Dining,Credit,6221815,84.16,0.0191,10000736.09,0.9617
 2025-06-01,North America,Dining,Debit,4559736,44.01,0.02,4013204.58,0.9516
@@ -1549,7 +1549,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-06-01,North America,Fuel,Prepaid,1333194,28.82,0.0147,564806.07,0.9543
 2025-06-01,Europe,Retail,Credit,5127868,82.97,0.018,7658649.24,0.9371
 2025-06-01,Europe,Retail,Debit,3862755,43.9,0.0181,3069365.09,0.9312
-2025-06-01,Europe,Retail,Prepaid,950497,27.67,0.0184,483997.46,0.9365
+2025-06-01,Europe,Retail,Prepaid,950497,27.67,0.0236,620779.34,0.9365
 2025-06-01,Europe,Travel,Credit,4899344,81.03,0.0219,8694090.97,0.9411
 2025-06-01,Europe,Travel,Debit,3863158,42.87,0.0217,3593433.22,0.9398
 2025-06-01,Europe,Travel,Prepaid,904987,27.96,0.0223,564364.99,0.9327
@@ -1572,7 +1572,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-06-01,Asia Pacific,Travel,Debit,3723529,40.85,0.0219,3331020.61,0.9144
 2025-06-01,Asia Pacific,Travel,Prepaid,848532,26.87,0.0225,512910.63,0.907
 2025-06-01,Asia Pacific,Dining,Credit,4393723,84.79,0.0199,7413601.95,0.9047
-2025-06-01,Asia Pacific,Dining,Debit,3612822,41.17,0.0197,2930016.06,0.9155
+2025-06-01,Asia Pacific,Dining,Debit,3612822,41.17,0.0165,2454074.37,0.9155
 2025-06-01,Asia Pacific,Dining,Prepaid,898055,27.16,0.0195,475631.66,0.9082
 2025-06-01,Asia Pacific,Healthcare,Credit,4814943,87.24,0.016,6720832.94,0.9042
 2025-06-01,Asia Pacific,Healthcare,Debit,3183936,43.52,0.0162,2244925.7,0.9114
@@ -1621,7 +1621,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-06-01,Middle East & Africa,Fuel,Prepaid,280959,27.16,0.0148,112920.97,0.8286
 2025-07-01,North America,Retail,Credit,6348810,88.78,0.0184,10371162.18,0.9674
 2025-07-01,North America,Retail,Debit,4672832,43.78,0.0185,3784413.69,0.9628
-2025-07-01,North America,Retail,Prepaid,1312462,29.33,0.0184,708240.0,0.9542
+2025-07-01,North America,Retail,Prepaid,1312462,29.33,0.0146,561973.04,0.9542
 2025-07-01,North America,Travel,Credit,6904686,84.16,0.0216,12551545.42,0.9586
 2025-07-01,North America,Travel,Debit,4700731,41.45,0.0215,4188695.37,0.9686
 2025-07-01,North America,Travel,Prepaid,1207641,27.82,0.0223,749161.68,0.9681
@@ -1680,7 +1680,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-07-01,Latin America,Travel,Debit,1630338,42.68,0.0215,1495982.7,0.8644
 2025-07-01,Latin America,Travel,Prepaid,406996,26.83,0.0219,239170.13,0.8766
 2025-07-01,Latin America,Dining,Credit,2157568,84.62,0.0196,3578332.34,0.873
-2025-07-01,Latin America,Dining,Debit,1661718,43.96,0.0192,1402550.26,0.8765
+2025-07-01,Latin America,Dining,Debit,1661718,43.96,0.0165,1205316.63,0.8765
 2025-07-01,Latin America,Dining,Prepaid,407338,28.69,0.0191,223225.76,0.8718
 2025-07-01,Latin America,Healthcare,Credit,2362338,85.29,0.0156,3143228.33,0.8614
 2025-07-01,Latin America,Healthcare,Debit,1529504,41.9,0.0157,1006247.35,0.8733
@@ -1750,11 +1750,11 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-08-01,Asia Pacific,Retail,Prepaid,892698,28.8,0.0178,457591.55,0.9139
 2025-08-01,Asia Pacific,Travel,Credit,4887133,85.17,0.0223,9281778.92,0.9054
 2025-08-01,Asia Pacific,Travel,Debit,3379749,43.36,0.0221,3238361.46,0.9075
-2025-08-01,Asia Pacific,Travel,Prepaid,855771,28.92,0.0223,551893.26,0.9024
+2025-08-01,Asia Pacific,Travel,Prepaid,855771,28.92,0.0244,603865.27,0.9024
 2025-08-01,Asia Pacific,Dining,Credit,4422772,84.8,0.02,7500857.77,0.909
 2025-08-01,Asia Pacific,Dining,Debit,3402797,42.37,0.0195,2811482.12,0.9103
 2025-08-01,Asia Pacific,Dining,Prepaid,899202,28.0,0.0192,483354.31,0.9086
-2025-08-01,Asia Pacific,Healthcare,Credit,4710324,84.91,0.0164,6559324.12,0.9186
+2025-08-01,Asia Pacific,Healthcare,Credit,4710324,84.91,0.0133,5319451.88,0.9186
 2025-08-01,Asia Pacific,Healthcare,Debit,3655544,40.43,0.0157,2320585.23,0.9138
 2025-08-01,Asia Pacific,Healthcare,Prepaid,860365,29.02,0.0162,404438.66,0.903
 2025-08-01,Asia Pacific,E-commerce,Credit,4537256,87.1,0.024,9484159.28,0.9181
@@ -1791,7 +1791,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-08-01,Middle East & Africa,Dining,Debit,1098002,40.93,0.0197,885440.01,0.8309
 2025-08-01,Middle East & Africa,Dining,Prepaid,281275,27.74,0.0193,150583.54,0.8231
 2025-08-01,Middle East & Africa,Healthcare,Credit,1429192,88.98,0.0157,1996499.46,0.8279
-2025-08-01,Middle East & Africa,Healthcare,Debit,1101573,42.16,0.0163,756967.58,0.8287
+2025-08-01,Middle East & Africa,Healthcare,Debit,1101573,42.16,0.0106,492261.12,0.8287
 2025-08-01,Middle East & Africa,Healthcare,Prepaid,286710,26.6,0.016,122036.63,0.8294
 2025-08-01,Middle East & Africa,E-commerce,Credit,1472516,89.01,0.0237,3106421.05,0.8217
 2025-08-01,Middle East & Africa,E-commerce,Debit,1093100,42.41,0.024,1112628.31,0.8356
@@ -1856,7 +1856,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-09-01,Latin America,Retail,Credit,2081852,80.78,0.0177,2976696.99,0.8652
 2025-09-01,Latin America,Retail,Debit,1570754,40.9,0.0181,1162923.79,0.8741
 2025-09-01,Latin America,Retail,Prepaid,463282,28.67,0.0178,236443.22,0.8649
-2025-09-01,Latin America,Travel,Credit,2132909,83.83,0.0226,4041110.01,0.8626
+2025-09-01,Latin America,Travel,Credit,2132909,83.83,0.0198,3540441.51,0.8626
 2025-09-01,Latin America,Travel,Debit,1518156,41.12,0.0215,1342185.07,0.8647
 2025-09-01,Latin America,Travel,Prepaid,437922,26.72,0.0224,262137.35,0.8618
 2025-09-01,Latin America,Dining,Credit,2137791,88.28,0.0191,3604458.44,0.8738
@@ -1919,7 +1919,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-10-01,Europe,Healthcare,Credit,5037654,86.8,0.0164,7171119.22,0.9362
 2025-10-01,Europe,Healthcare,Debit,3774323,40.64,0.0165,2530631.68,0.9353
 2025-10-01,Europe,Healthcare,Prepaid,1038032,27.88,0.0165,477548.35,0.9477
-2025-10-01,Europe,E-commerce,Credit,4816172,84.1,0.0245,9922913.59,0.9484
+2025-10-01,Europe,E-commerce,Credit,4816172,84.1,0.0272,11016459.17,0.9484
 2025-10-01,Europe,E-commerce,Debit,3552876,41.05,0.0249,3631542.09,0.9424
 2025-10-01,Europe,E-commerce,Prepaid,943114,28.55,0.025,673254.26,0.9442
 2025-10-01,Europe,Fuel,Credit,4843616,89.19,0.0147,6350097.29,0.941
@@ -1933,7 +1933,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-10-01,Asia Pacific,Travel,Prepaid,971754,26.65,0.0219,567162.1,0.9027
 2025-10-01,Asia Pacific,Dining,Credit,4633470,84.07,0.0198,7713013.03,0.9023
 2025-10-01,Asia Pacific,Dining,Debit,3648985,40.54,0.02,2958938.96,0.9074
-2025-10-01,Asia Pacific,Dining,Prepaid,879630,28.49,0.0192,481166.73,0.9048
+2025-10-01,Asia Pacific,Dining,Prepaid,879630,28.49,0.0247,619000.95,0.9048
 2025-10-01,Asia Pacific,Healthcare,Credit,4942103,87.65,0.0166,7190534.1,0.9126
 2025-10-01,Asia Pacific,Healthcare,Debit,3622555,41.54,0.0166,2498019.43,0.9065
 2025-10-01,Asia Pacific,Healthcare,Prepaid,855415,28.76,0.0158,388744.55,0.9149
@@ -2033,7 +2033,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-11-01,Asia Pacific,Fuel,Credit,4918298,88.03,0.0148,6407571.12,0.9156
 2025-11-01,Asia Pacific,Fuel,Debit,3358798,40.27,0.0144,1947642.37,0.9025
 2025-11-01,Asia Pacific,Fuel,Prepaid,960398,28.68,0.0151,415989.13,0.903
-2025-11-01,Latin America,Retail,Credit,2215149,88.86,0.0187,3680855.96,0.8713
+2025-11-01,Latin America,Retail,Credit,2215149,88.86,0.0214,4212316.44,0.8713
 2025-11-01,Latin America,Retail,Debit,1521903,42.15,0.0178,1141825.51,0.876
 2025-11-01,Latin America,Retail,Prepaid,468612,27.62,0.0181,234286.98,0.8731
 2025-11-01,Latin America,Travel,Credit,2370422,85.86,0.0224,4559146.41,0.8652
@@ -2083,7 +2083,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-12-01,North America,Healthcare,Prepaid,1255279,27.44,0.0159,547656.96,0.9664
 2025-12-01,North America,E-commerce,Credit,7312786,82.59,0.0245,14796437.61,0.9573
 2025-12-01,North America,E-commerce,Debit,4683531,40.21,0.0245,4614222.28,0.9553
-2025-12-01,North America,E-commerce,Prepaid,1285614,27.72,0.0249,887372.1,0.952
+2025-12-01,North America,E-commerce,Prepaid,1285614,27.72,0.0278,990720.66,0.952
 2025-12-01,North America,Fuel,Credit,6546073,86.65,0.0147,8338418.53,0.9607
 2025-12-01,North America,Fuel,Debit,4637373,44.08,0.0149,3045824.65,0.9638
 2025-12-01,North America,Fuel,Prepaid,1245955,28.44,0.0146,517359.34,0.9662
@@ -2102,7 +2102,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-12-01,Europe,E-commerce,Credit,4828858,83.97,0.0238,9650382.77,0.9444
 2025-12-01,Europe,E-commerce,Debit,3467457,43.99,0.0247,3767824.12,0.9439
 2025-12-01,Europe,E-commerce,Prepaid,943348,28.58,0.0245,660518.66,0.934
-2025-12-01,Europe,Fuel,Credit,5508158,85.02,0.015,7024467.03,0.9358
+2025-12-01,Europe,Fuel,Credit,5508158,85.02,0.0091,4261510.0,0.9358
 2025-12-01,Europe,Fuel,Debit,3691476,43.6,0.0151,2430422.06,0.9459
 2025-12-01,Europe,Fuel,Prepaid,952166,29.25,0.015,417803.87,0.9382
 2025-12-01,Asia Pacific,Retail,Credit,4682023,81.43,0.0178,6786004.97,0.9142
@@ -2112,7 +2112,7 @@ month,region,merchant_category,card_type,transaction_volume,avg_transaction_usd,
 2025-12-01,Asia Pacific,Travel,Debit,3535631,43.63,0.023,3547965.33,0.9136
 2025-12-01,Asia Pacific,Travel,Prepaid,914161,29.15,0.0225,599585.26,0.9145
 2025-12-01,Asia Pacific,Dining,Credit,4992027,87.12,0.02,8698325.26,0.9053
-2025-12-01,Asia Pacific,Dining,Debit,3662029,43.36,0.0203,3223207.93,0.9169
+2025-12-01,Asia Pacific,Dining,Debit,3662029,43.36,0.0152,2413436.48,0.9169
 2025-12-01,Asia Pacific,Dining,Prepaid,932374,28.3,0.0199,525097.05,0.9185
 2025-12-01,Asia Pacific,Healthcare,Credit,4961416,85.2,0.0166,7017020.78,0.905
 2025-12-01,Asia Pacific,Healthcare,Debit,3287382,42.06,0.0166,2295099.16,0.9182
