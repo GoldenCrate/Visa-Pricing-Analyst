@@ -21,7 +21,7 @@ This project directly demonstrates the role's core requirements: rigorous quanti
 | Data Processing | Pandas |
 | Financial Model | Python pure function (`compute_deal_pnl`) |
 | Visualisation | Altair |
-| Dashboard | Streamlit (three-page multipage app) |
+| Dashboard | Streamlit (four-page multipage app) |
 | Testing | pytest (8 unit tests) |
 | Deployment | Streamlit Community Cloud |
 
@@ -74,6 +74,9 @@ The dataset (`streamlit_app/data/visa_pricing_metrics.csv`) has 2,160 rows — o
 ### Deal Simulator
 ![Deal Simulator](docs/deal-simulator.png)
 
+### Interchange Compliance Monitor
+Audits assessed interchange against the published rate schedule, flags deviations beyond a configurable tolerance, and quantifies the financial impact (over- vs under-assessment) — with a management-review queue. Tailored to Visa's Global Interchange Strategy / Compliance work.
+
 ## Key Insights
 
 **Descriptive (what does the data show?):** E-commerce and Travel carry the highest interchange rates at 2.4% and 2.2% respectively, while Fuel sits at 1.45% — a 66% spread across categories that represents significant revenue variation per transaction.
@@ -118,18 +121,21 @@ python generate_data.py
     │   ├── 1_market_overview.py     # Page 1: Market Overview dashboard
     │   ├── pages/
     │   │   ├── 2_deal_simulator.py       # Page 2: Deal Simulator
-    │   │   └── 3_ecommerce_targets.py    # Page 3: E-commerce Merchant Targets
+    │   │   ├── 3_ecommerce_targets.py    # Page 3: E-commerce Merchant Targets
+    │   │   └── 4_interchange_compliance.py  # Page 4: Interchange Compliance Monitor
     │   ├── utils/
     │   │   ├── data_loader.py            # Shared cached CSV loader
     │   │   ├── deal_pnl.py               # Core financial model (pure function)
-    │   │   └── opportunity_score.py      # Merchant opportunity scoring (pure function)
+    │   │   ├── opportunity_score.py      # Merchant opportunity scoring (pure function)
+    │   │   └── compliance.py             # Interchange compliance audit (pure function)
     │   ├── data/
     │   │   ├── visa_pricing_metrics.csv
     │   │   └── ecommerce_merchants.csv
     │   └── generate_data.py         # Synthetic data generator
     ├── tests/
     │   ├── test_deal_pnl.py              # 8 unit tests for the financial model
-    │   └── test_opportunity_score.py     # 7 unit tests for the opportunity score function
+    │   ├── test_opportunity_score.py     # 7 unit tests for the opportunity score function
+    │   └── test_compliance.py            # 8 unit tests for the compliance audit function
     ├── docs/
     │   ├── proposal.md              # Project proposal
     │   └── pipeline-diagram.md      # Data flow diagram
