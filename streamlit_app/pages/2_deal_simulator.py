@@ -3,6 +3,7 @@ import pandas as pd
 import altair as alt
 from utils.data_loader import load_data
 from utils.deal_pnl import compute_deal_pnl
+from utils.chart_style import ACCENT, GREY, style
 
 st.set_page_config(page_title="Deal Simulator", page_icon="🤝", layout="wide")
 
@@ -100,7 +101,13 @@ with right:
         .encode(
             x=alt.X("year:O", title="Year"),
             y=alt.Y("revenue_m:Q", title="Revenue (USD M)"),
-            color=alt.Color("type:N", title=""),
+            color=alt.Color(
+                "type:N", title="",
+                scale=alt.Scale(
+                    domain=["Net Revenue", "Gross Revenue"],
+                    range=[ACCENT, GREY],
+                ),
+            ),
             xOffset="type:N",
             tooltip=[
                 alt.Tooltip("year:O", title="Year"),
@@ -110,7 +117,7 @@ with right:
         )
         .properties(height=280)
     )
-    st.altair_chart(bar_chart, use_container_width=True)
+    st.altair_chart(style(bar_chart), use_container_width=True)
 
     st.subheader("Year-by-Year P&L")
     display_df = pd.DataFrame({

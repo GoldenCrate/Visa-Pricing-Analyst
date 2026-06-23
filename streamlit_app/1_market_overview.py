@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from utils.data_loader import load_data
+from utils.chart_style import ACCENT, GREY, LINE, style
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -85,7 +86,7 @@ with col1:
     )
     chart_vol = (
         alt.Chart(vol_by_month)
-        .mark_line(point=True)
+        .mark_line(color=LINE, point=alt.OverlayMarkDef(color=LINE))
         .encode(
             x=alt.X("month:T", title="Month"),
             y=alt.Y("volume:Q", title="Transactions", axis=alt.Axis(format=".2s")),
@@ -96,7 +97,7 @@ with col1:
         )
         .properties(height=300)
     )
-    st.altair_chart(chart_vol, use_container_width=True)
+    st.altair_chart(style(chart_vol), use_container_width=True)
 
 with col2:
     st.subheader("Avg Interchange Rate by Merchant Category")
@@ -106,13 +107,17 @@ with col2:
         .sort_values("interchange_rate", ascending=False)
     )
     ir_by_cat["rate_pct"] = ir_by_cat["interchange_rate"] * 100
+    top_category = str(ir_by_cat.iloc[0]["merchant_category"])  # highest rate
     chart_ir = (
         alt.Chart(ir_by_cat)
         .mark_bar()
         .encode(
             x=alt.X("rate_pct:Q", title="Interchange Rate (%)"),
             y=alt.Y("merchant_category:N", sort="-x", title=""),
-            color=alt.Color("merchant_category:N", legend=None),
+            color=alt.condition(
+                alt.FieldEqualPredicate(field="merchant_category", equal=top_category),
+                alt.value(ACCENT), alt.value(GREY),
+            ),
             tooltip=[
                 alt.Tooltip("merchant_category:N", title="Category"),
                 alt.Tooltip("rate_pct:Q", title="Rate (%)", format=".3f"),
@@ -120,7 +125,7 @@ with col2:
         )
         .properties(height=300)
     )
-    st.altair_chart(chart_ir, use_container_width=True)
+    st.altair_chart(style(chart_ir), use_container_width=True)
 
 # ── Row 2: Acceptance rate by region │ Revenue by card type ───────────────────
 col3, col4 = st.columns(2)
@@ -133,13 +138,17 @@ with col3:
         .sort_values("acceptance_rate", ascending=False)
     )
     acc_by_region["accept_pct"] = acc_by_region["acceptance_rate"] * 100
+    lowest_region = str(acc_by_region.iloc[-1]["region"])  # lowest acceptance = the gap
     chart_acc = (
         alt.Chart(acc_by_region)
         .mark_bar()
         .encode(
             x=alt.X("accept_pct:Q", title="Acceptance Rate (%)", scale=alt.Scale(zero=False)),
             y=alt.Y("region:N", sort="-x", title=""),
-            color=alt.Color("region:N", legend=None),
+            color=alt.condition(
+                alt.FieldEqualPredicate(field="region", equal=lowest_region),
+                alt.value(ACCENT), alt.value(GREY),
+            ),
             tooltip=[
                 alt.Tooltip("region:N", title="Region"),
                 alt.Tooltip("accept_pct:Q", title="Acceptance Rate (%)", format=".2f"),
@@ -147,7 +156,7 @@ with col3:
         )
         .properties(height=300)
     )
-    st.altair_chart(chart_acc, use_container_width=True)
+    st.altair_chart(style(chart_acc), use_container_width=True)
 
 with col4:
     st.subheader("Revenue Share by Card Type")
@@ -157,13 +166,17 @@ with col4:
         .sort_values("revenue_usd", ascending=False)
     )
     rev_by_card["revenue_m"] = rev_by_card["revenue_usd"] / 1_000_000
+    top_card = str(rev_by_card.iloc[0]["card_type"])  # largest revenue share
     chart_rev = (
         alt.Chart(rev_by_card)
         .mark_bar()
         .encode(
             x=alt.X("card_type:N", title="Card Type"),
             y=alt.Y("revenue_m:Q", title="Revenue (USD M)"),
-            color=alt.Color("card_type:N", legend=None),
+            color=alt.condition(
+                alt.FieldEqualPredicate(field="card_type", equal=top_card),
+                alt.value(ACCENT), alt.value(GREY),
+            ),
             tooltip=[
                 alt.Tooltip("card_type:N", title="Card Type"),
                 alt.Tooltip("revenue_m:Q", title="Revenue ($M)", format=".1f"),
@@ -171,7 +184,7 @@ with col4:
         )
         .properties(height=300)
     )
-    st.altair_chart(chart_rev, use_container_width=True)
+    st.altair_chart(style(chart_rev), use_container_width=True)
 
 # ── Row 3: Raw data expander ───────────────────────────────────────────────────
 with st.expander("View raw data"):

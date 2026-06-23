@@ -3,24 +3,9 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 from utils.compliance import PUBLISHED_SCHEDULE, compute_compliance_exceptions
+from utils.chart_style import ACCENT, GREY, LINE, style
 
 st.set_page_config(page_title="Interchange Compliance", page_icon="🛡️", layout="wide")
-
-# Storytelling-with-Data palette: mute to grey, reserve one accent colour.
-GREY = "#bfbfbf"
-ACCENT = "#c00000"
-TEXT = "#595959"
-GRID = "#ebebeb"
-
-
-def style(chart):
-    return (
-        chart.configure_view(stroke=None)
-        .configure_axis(grid=True, gridColor=GRID, domainColor="#d9d9d9",
-                        tickColor="#d9d9d9", labelColor=TEXT, titleColor=TEXT)
-        .configure_title(color=TEXT, fontSize=15, anchor="start")
-    )
-
 
 st.title("Interchange Compliance Monitor")
 st.caption(
@@ -81,17 +66,21 @@ if n_exceptions:
 
     with left:
         monthly = exceptions.groupby("month", as_index=False)["abs_impact"].sum()
-        line = (
-            alt.Chart(monthly)
-            .mark_line(color=GREY, point=alt.OverlayMarkDef(color=ACCENT, size=55))
-            .encode(
-                x=alt.X("month:T", title="Month"),
-                y=alt.Y("abs_impact:Q", title="$ at risk",
-                        axis=alt.Axis(format="$.2s")),
-            )
-            .properties(title="Assessment $ at risk over time", height=300)
+        monthly["is_peak"] = monthly["abs_impact"] == monthly["abs_impact"].max()
+        base = alt.Chart(monthly).encode(
+            x=alt.X("month:T", title="Month"),
+            y=alt.Y("abs_impact:Q", title="$ at risk", axis=alt.Axis(format="$.2s")),
         )
-        st.altair_chart(style(line), use_container_width=True)
+        line = base.mark_line(color=LINE)
+        points = base.mark_point(filled=True, size=70).encode(
+            color=alt.condition(
+                "datum.is_peak", alt.value(ACCENT), alt.value(GREY)
+            ),
+        )
+        trend = (line + points).properties(
+            title="Assessment $ at risk over time", height=300
+        )
+        st.altair_chart(style(trend), use_container_width=True)
 
     with right:
         by_cat = (

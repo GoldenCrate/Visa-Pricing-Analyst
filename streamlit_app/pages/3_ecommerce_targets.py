@@ -3,6 +3,7 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 from utils.opportunity_score import compute_opportunity_score
+from utils.chart_style import ACCENT, GREY, style
 
 st.set_page_config(page_title="E-commerce Targets", page_icon="🎯", layout="wide")
 
@@ -67,13 +68,9 @@ with col1:
         .encode(
             x=alt.X("score:Q", title="Opportunity Score (0–100)"),
             y=alt.Y("merchant_name:N", sort="-x", title=""),
-            color=alt.Color(
-                "priority:N",
-                scale=alt.Scale(
-                    domain=["High", "Medium", "Low"],
-                    range=["#2ecc71", "#f39c12", "#e74c3c"],
-                ),
-                title="Priority",
+            color=alt.condition(
+                alt.FieldEqualPredicate(field="priority", equal="High"),
+                alt.value(ACCENT), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("merchant_name:N", title="Merchant"),
@@ -83,7 +80,7 @@ with col1:
         )
         .properties(height=320)
     )
-    st.altair_chart(bar, use_container_width=True)
+    st.altair_chart(style(bar), use_container_width=True)
 
 with col2:
     st.subheader("Volume vs Acceptance Rate")
@@ -96,13 +93,9 @@ with col2:
             y=alt.Y("annual_volume_m:Q", title="Annual Volume (M txns)"),
             size=alt.Size("score:Q", title="Opportunity Score",
                           scale=alt.Scale(range=[100, 1200])),
-            color=alt.Color(
-                "priority:N",
-                scale=alt.Scale(
-                    domain=["High", "Medium", "Low"],
-                    range=["#2ecc71", "#f39c12", "#e74c3c"],
-                ),
-                title="Priority",
+            color=alt.condition(
+                alt.FieldEqualPredicate(field="priority", equal="High"),
+                alt.value(ACCENT), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("merchant_name:N", title="Merchant"),
@@ -113,7 +106,7 @@ with col2:
         )
         .properties(height=320)
     )
-    st.altair_chart(scatter, use_container_width=True)
+    st.altair_chart(style(scatter), use_container_width=True)
 
 # ── Ranked table ──────────────────────────────────────────────────────────────
 st.subheader("Ranked Merchant Table")
