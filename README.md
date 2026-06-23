@@ -27,13 +27,6 @@ This project models the pricing strategy and interchange compliance work perform
 
 - **Compliance:** At a 15 bps tolerance the monitor flags 43 mis-assessed segments — $26.1M of interchange at risk (net −$2.2M under-assessed), concentrated in Healthcare. The review queue surfaces the largest-dollar exceptions first so the highest-impact discrepancies are investigated before they compound.
 
-## Job Posting
-
-- **Role:** Analyst, Pricing Strategy / Global Interchange Strategy & Compliance
-- **Company:** Visa Inc.
-
-This project demonstrates the role's core requirements: rigorous quantitative analysis, financial modeling, interchange-assessment monitoring, and the ability to synthesise large datasets into actionable pricing and compliance recommendations for business leaders.
-
 ## Tech Stack
 
 | Layer | Tool |
