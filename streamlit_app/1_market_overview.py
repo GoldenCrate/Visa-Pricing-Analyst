@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from utils.data_loader import load_data
-from utils.chart_style import ACCENT, GREY, LINE, insight, style
+from utils.chart_style import ACCENT, BLUE, GREY, LINE, fmt_big, insight, style
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -66,11 +66,27 @@ avg_interchange = (
 )
 avg_acceptance  = filtered["acceptance_rate"].mean()
 
+# Month-over-month deltas (latest vs prior month) for KPI context.
+months_sorted = sorted(filtered["month"].unique())
+vol_delta = rev_delta = ic_delta = acc_delta = None
+if len(months_sorted) >= 2:
+    cur = filtered[filtered["month"] == months_sorted[-1]]
+    prev = filtered[filtered["month"] == months_sorted[-2]]
+
+    def _wavg_interchange(d):
+        return (d["interchange_rate"] * d["transaction_volume"]).sum() / d["transaction_volume"].sum()
+
+    vol_delta = f"{(cur['transaction_volume'].sum() / prev['transaction_volume'].sum() - 1) * 100:+.1f}% MoM"
+    rev_delta = f"{(cur['revenue_usd'].sum() / prev['revenue_usd'].sum() - 1) * 100:+.1f}% MoM"
+    ic_delta = f"{(_wavg_interchange(cur) - _wavg_interchange(prev)) * 100:+.2f}pp MoM"
+    acc_delta = f"{(cur['acceptance_rate'].mean() - prev['acceptance_rate'].mean()) * 100:+.2f}pp MoM"
+
 k1, k2, k3, k4 = st.columns(4)
-k1.metric("Total Transactions",   f"{total_volume / 1_000_000:.1f}M")
-k2.metric("Total Revenue",        f"${total_revenue / 1_000_000:.1f}M")
-k3.metric("Avg Interchange Rate", f"{avg_interchange * 100:.2f}%")
-k4.metric("Avg Acceptance Rate",  f"{avg_acceptance * 100:.2f}%")
+k1.metric("Total Transactions",   fmt_big(total_volume), delta=vol_delta)
+k2.metric("Total Revenue",        fmt_big(total_revenue, money=True), delta=rev_delta)
+k3.metric("Avg Interchange Rate", f"{avg_interchange * 100:.2f}%", delta=ic_delta)
+k4.metric("Avg Acceptance Rate",  f"{avg_acceptance * 100:.2f}%", delta=acc_delta)
+st.caption("Totals/averages are for the selected range; ▲▼ deltas compare the latest month to the prior month.")
 
 st.divider()
 
@@ -89,7 +105,8 @@ with col1:
         .mark_line(color=LINE, point=alt.OverlayMarkDef(color=LINE))
         .encode(
             x=alt.X("month:T", title="Month"),
-            y=alt.Y("volume:Q", title="Transactions", axis=alt.Axis(format=".2s")),
+            y=alt.Y("volume:Q", title="Transactions",
+                    axis=alt.Axis(format=".2s"), scale=alt.Scale(zero=False)),
             tooltip=[
                 alt.Tooltip("month:T", title="Month", format="%b %Y"),
                 alt.Tooltip("volume:Q", title="Transactions", format=","),
@@ -100,7 +117,8 @@ with col1:
     st.altair_chart(style(chart_vol), use_container_width=True)
     insight(
         "What to look for: the overall trend — steady growth signals expanding "
-        "network volume; flat or dipping stretches flag seasonal or regional softness."
+        "network volume; flat or dipping stretches flag seasonal softness. "
+        "<i>(Y-axis starts above zero to make the slope visible.)</i>"
     )
 
 with col2:
@@ -116,11 +134,12 @@ with col2:
         alt.Chart(ir_by_cat)
         .mark_bar()
         .encode(
-            x=alt.X("rate_pct:Q", title="Interchange Rate (%)"),
+            x=alt.X("rate_pct:Q", title="Interchange Rate (%)",
+                    axis=alt.Axis(tickCount=6)),
             y=alt.Y("merchant_category:N", sort="-x", title=""),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="merchant_category", equal=top_category),
-                alt.value(ACCENT), alt.value(GREY),
+                alt.value(BLUE), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("merchant_category:N", title="Category"),
@@ -151,7 +170,8 @@ with col3:
         alt.Chart(acc_by_region)
         .mark_bar()
         .encode(
-            x=alt.X("accept_pct:Q", title="Acceptance Rate (%)", scale=alt.Scale(zero=False)),
+            x=alt.X("accept_pct:Q", title="Acceptance Rate (%)",
+                    scale=alt.Scale(zero=False), axis=alt.Axis(tickCount=4)),
             y=alt.Y("region:N", sort="-x", title=""),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="region", equal=lowest_region),
@@ -186,11 +206,12 @@ with col4:
         alt.Chart(rev_by_card)
         .mark_bar()
         .encode(
-            x=alt.X("share_pct:Q", title="Share of Revenue (%)"),
+            x=alt.X("share_pct:Q", title="Share of Revenue (%)",
+                    axis=alt.Axis(tickCount=5)),
             y=alt.Y("card_type:N", sort="-x", title=""),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="card_type", equal=top_card),
-                alt.value(ACCENT), alt.value(GREY),
+                alt.value(BLUE), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("card_type:N", title="Card Type"),

@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 from utils.opportunity_score import compute_opportunity_score
-from utils.chart_style import ACCENT, GREY, insight, style
+from utils.chart_style import BLUE, GREY, insight, style
 
 st.set_page_config(page_title="E-commerce Targets", page_icon="🎯", layout="wide")
 
@@ -70,7 +70,7 @@ with col1:
             y=alt.Y("merchant_name:N", sort="-x", title=""),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="priority", equal="High"),
-                alt.value(ACCENT), alt.value(GREY),
+                alt.value(BLUE), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("merchant_name:N", title="Merchant"),
@@ -82,7 +82,7 @@ with col1:
     )
     st.altair_chart(style(bar), use_container_width=True)
     insight(
-        "High-priority targets (red) combine large volume, strong growth, and "
+        "High-priority targets (blue) combine large volume, strong growth, and "
         "acceptance headroom — begin deal outreach at the top of this list."
     )
 
@@ -99,7 +99,7 @@ with col2:
                           scale=alt.Scale(range=[100, 1200])),
             color=alt.condition(
                 alt.FieldEqualPredicate(field="priority", equal="High"),
-                alt.value(ACCENT), alt.value(GREY),
+                alt.value(BLUE), alt.value(GREY),
             ),
             tooltip=[
                 alt.Tooltip("merchant_name:N", title="Merchant"),
@@ -113,7 +113,7 @@ with col2:
     st.altair_chart(style(scatter), use_container_width=True)
     insight(
         "Top-right = high volume; further left = lower acceptance (more upside to "
-        "win). The largest red dots are the highest-scoring, high-priority targets."
+        "win). The largest blue dots are the highest-scoring, high-priority targets."
     )
 
 # ── Ranked table ──────────────────────────────────────────────────────────────

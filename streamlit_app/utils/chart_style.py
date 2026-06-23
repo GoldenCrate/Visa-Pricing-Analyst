@@ -8,11 +8,28 @@ the app reads as one intentional product.
 import streamlit as st
 
 GREY = "#bfbfbf"
-ACCENT = "#c00000"
+ACCENT = "#c00000"   # red — risk / problem framing (gaps, exceptions, $ at risk)
+BLUE = "#1434cb"     # Visa blue — opportunity / positive framing (headroom, top performers)
 LINE = "#8c8c8c"
 TEXT = "#595959"
 GRID = "#ebebeb"
 INSIGHT_TEXT = "#3b3b3b"  # darker than st.caption for readable insight lines
+
+
+def fmt_big(value: float, money: bool = False) -> str:
+    """Human-readable magnitude: 5.42B, $6.51B, 812.3M, $45.0K.
+
+    Uses a consistent threshold so values never read as e.g. '5421.2M'.
+    """
+    prefix = "$" if money else ""
+    a = abs(value)
+    if a >= 1e9:
+        return f"{prefix}{value / 1e9:.2f}B"
+    if a >= 1e6:
+        return f"{prefix}{value / 1e6:.1f}M"
+    if a >= 1e3:
+        return f"{prefix}{value / 1e3:.1f}K"
+    return f"{prefix}{value:,.0f}"
 
 
 def insight(text: str) -> None:
