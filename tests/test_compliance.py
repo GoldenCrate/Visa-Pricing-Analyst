@@ -10,9 +10,14 @@ def _df(rows):
     return pd.DataFrame(rows)
 
 
-def test_published_schedule_has_six_categories():
-    assert set(PUBLISHED_SCHEDULE) == {
-        "Retail", "Travel", "Dining", "Healthcare", "E-commerce", "Fuel"
+def test_published_schedule_has_expected_categories_and_rates():
+    assert PUBLISHED_SCHEDULE == {
+        "Retail": 0.0180,
+        "Travel": 0.0220,
+        "Dining": 0.0195,
+        "Healthcare": 0.0160,
+        "E-commerce": 0.0240,
+        "Fuel": 0.0145,
     }
 
 
