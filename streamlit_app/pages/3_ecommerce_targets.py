@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 from utils.opportunity_score import compute_opportunity_score
-from utils.chart_style import ACCENT, GREY, style
+from utils.chart_style import ACCENT, GREY, insight, style
 
 st.set_page_config(page_title="E-commerce Targets", page_icon="🎯", layout="wide")
 
@@ -81,7 +81,7 @@ with col1:
         .properties(height=320)
     )
     st.altair_chart(style(bar), use_container_width=True)
-    st.caption(
+    insight(
         "High-priority targets (red) combine large volume, strong growth, and "
         "acceptance headroom — begin deal outreach at the top of this list."
     )
@@ -111,7 +111,7 @@ with col2:
         .properties(height=320)
     )
     st.altair_chart(style(scatter), use_container_width=True)
-    st.caption(
+    insight(
         "Top-right = high volume; further left = lower acceptance (more upside to "
         "win). The largest red dots are the highest-scoring, high-priority targets."
     )

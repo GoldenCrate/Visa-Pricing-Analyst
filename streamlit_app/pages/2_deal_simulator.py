@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 from utils.data_loader import load_data
 from utils.deal_pnl import compute_deal_pnl
-from utils.chart_style import ACCENT, GREY, style
+from utils.chart_style import ACCENT, GREY, insight, style
 
 st.set_page_config(page_title="Deal Simulator", page_icon="🤝", layout="wide")
 
@@ -118,7 +118,7 @@ with right:
         .properties(height=280)
     )
     st.altair_chart(style(bar_chart), use_container_width=True)
-    st.caption(
+    insight(
         "Net revenue (red) is what remains after the discount; the gap to gross "
         "is the deal's cost. Watch whether net still grows across the term — if it "
         "shrinks, the discount is outpacing volume growth."

@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 from utils.compliance import PUBLISHED_SCHEDULE, compute_compliance_exceptions
-from utils.chart_style import ACCENT, GREY, LINE, style
+from utils.chart_style import ACCENT, GREY, LINE, insight, style
 
 st.set_page_config(page_title="Interchange Compliance", page_icon="🛡️", layout="wide")
 
@@ -81,7 +81,7 @@ if n_exceptions:
             title="Assessment $ at risk over time", height=300
         )
         st.altair_chart(style(trend), use_container_width=True)
-        st.caption(
+        insight(
             "The red point marks the month of greatest assessment exposure — "
             "start the investigation there to find what drove the spike."
         )
@@ -107,8 +107,8 @@ if n_exceptions:
             .properties(title="Where exceptions concentrate", height=300)
         )
         st.altair_chart(style(bars), use_container_width=True)
-        st.caption(
-            f"**{top_cat}** concentrates the most assessment at risk — "
+        insight(
+            f"<b>{top_cat}</b> concentrates the most assessment at risk — "
             "prioritise compliance review and root-cause analysis there."
         )
 

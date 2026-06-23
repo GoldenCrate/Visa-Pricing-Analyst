@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from utils.data_loader import load_data
-from utils.chart_style import ACCENT, GREY, LINE, style
+from utils.chart_style import ACCENT, GREY, LINE, insight, style
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -98,7 +98,7 @@ with col1:
         .properties(height=300)
     )
     st.altair_chart(style(chart_vol), use_container_width=True)
-    st.caption(
+    insight(
         "What to look for: the overall trend — steady growth signals expanding "
         "network volume; flat or dipping stretches flag seasonal or regional softness."
     )
@@ -130,8 +130,8 @@ with col2:
         .properties(height=300)
     )
     st.altair_chart(style(chart_ir), use_container_width=True)
-    st.caption(
-        f"**{top_category}** carries the highest interchange rate — the category "
+    insight(
+        f"<b>{top_category}</b> carries the highest interchange rate — the category "
         "with the most revenue headroom per transaction to structure deals around."
     )
 
@@ -165,8 +165,8 @@ with col3:
         .properties(height=300)
     )
     st.altair_chart(style(chart_acc), use_container_width=True)
-    st.caption(
-        f"**{lowest_region}** has the lowest acceptance rate — the biggest "
+    insight(
+        f"<b>{lowest_region}</b> has the lowest acceptance rate — the biggest "
         "network-improvement opportunity and the most revenue left on the table."
     )
 
@@ -201,8 +201,8 @@ with col4:
         .properties(height=300)
     )
     st.altair_chart(style(chart_rev), use_container_width=True)
-    st.caption(
-        f"**{top_card}** drives the largest share of revenue — the card type "
+    insight(
+        f"<b>{top_card}</b> drives the largest share of revenue — the card type "
         "where a pricing change moves the needle most."
     )
 
